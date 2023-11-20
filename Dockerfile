@@ -6,5 +6,10 @@ RUN ls -la /home/node/
 RUN npm config set registry http://0.0.0.0:4873/
 RUN cd ~/.n8n/ && mkdir nodes && cd nodes && npm install @telepilotco/n8n-nodes-telepilot
 RUN ls -la ~/.n8n/nodes/
+
+ENV DEBUG=tdl,telepilot-cred,telepilot-node,telepilot-trigger,telepilot-cm
+ENV EXECUTIONS_PROCESS=main
+ENV N8N_LOG_LEVEL=debug
+
 # USER node
 ENTRYPOINT ["tini", "--", "/docker-entrypoint.sh"]
