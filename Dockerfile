@@ -11,6 +11,7 @@ ENV DEBUG=tdl,telepilot-cred,telepilot-node,telepilot-trigger,telepilot-cm
 ENV EXECUTIONS_PROCESS=main
 ENV N8N_LOG_LEVEL=debug
 ENV N8N_HOST=0.0.0.0
+ENV N8N_PORT=5678
 
 # USER node
 ENTRYPOINT ["tini", "--", "/docker-entrypoint.sh"]
